@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10172a">
+    <title>JobGuide | Find Your Future</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="#">
+            <span class="brand-icon">J</span>
+            <span>JobGuide</span>
+        </a>
+        <span class="tagline">Your career journey starts here.</span>
+    </header>
+
+    <main class="container">
+
+        <!-- SLIDE 1: WELCOME -->
+        <section class="hero slide active" id="welcomeSlide">
+            <p class="eyebrow">YOUR FUTURE, YOUR WAY</p>
+
+            <h1>
+                Find opportunities<br>
+                that <span>fit you.</span>
+            </h1>
+
+            <p class="hero-description">
+                Discover jobs, internships and career opportunities
+                matched to your skills, interests and goals.
+            </p>
+
+            <div class="welcome-highlights">
+                <div class="highlight-card">
+                    <span>🎯</span>
+                    <strong>Personalized</strong>
+                    <p>Opportunities matched to you</p>
+                </div>
+
+                <div class="highlight-card">
+                    <span>🚀</span>
+                    <strong>Career Ready</strong>
+                    <p>Find your next step</p>
+                </div>
+
+                <div class="highlight-card">
+                    <span>💡</span>
+                    <strong>Skill Insights</strong>
+                    <p>Discover what to learn next</p>
+                </div>
+            </div>
+
+            <button class="primary-button" id="startProfileButton"
+                type="button">
+                Build My Profile →
+            </button>
+
+            <p class="slide-note">
+                A few simple steps can help you explore your future.
+            </p>
+        </section>
+
+        <!-- PROFILE SLIDES -->
+        <section class="panel profile-panel" id="profile">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow" id="slideStepLabel">YOUR PROFILE</p>
+                    <h2 id="slideHeading">Let's get to know you</h2>
+                    <p id="slideDescription">
+                        Complete each step to find suitable opportunities.
+                    </p>
+                </div>
+
+                <span class="section-icon" id="slideIcon">👤</span>
+            </div>
+
+            <!-- SLIDE PROGRESS -->
+            <div class="slide-progress">
+                <div class="progress-track">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <p id="progressText">Step 1 of 3</p>
+            </div>
+
+            <form id="profileForm">
+
+                <!-- SLIDE 2: PERSONAL DETAILS -->
+                <div class="form-slide active" data-slide="0">
+                    <div class="slide-intro">
+                        <span class="slide-number">01</span>
+                        <h3>Personal Details</h3>
+                        <p>Tell us about your education.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <label>
+                            Full name
+                            <input id="fullName" name="name" type="text"
+                                placeholder="Enter your name" required>
+                        </label>
+
+                        <label>
+                            Degree
+                            <select id="degree" name="degree" required>
+                                <option value="">Select degree</option>
+                                <option value="B.Tech">B.Tech</option>
+                                <option value="B.E.">B.E.</option>
+                                <option value="B.Sc">B.Sc</option>
+                                <option value="BCA">BCA</option>
+                                <option value="B.Com">B.Com</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Branch / field
+                            <input id="branch" name="branch" type="text"
+                                placeholder="e.g. AIML, CSE" required>
+                        </label>
+
+                        <label>
+                            Graduation year
+                            <input id="graduationYear" name="graduationYear"
+                                type="number" min="2020" max="2040"
+                                placeholder="e.g. 2029" required>
+                        </label>
+                    </div>
+
+                    <div class="slide-actions">
+                        <button class="secondary-button back-button"
+                            id="backToWelcomeButton" type="button">
+                            ← Back
+                        </button>
+
+                        <button class="primary-button next-button"
+                            type="button" data-next="1">
+                            Next: Your Skills →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3: SKILLS AND INTERESTS -->
+                <div class="form-slide" data-slide="1" hidden>
+                    <div class="slide-intro">
+                        <span class="slide-number">02</span>
+                        <h3>Skills & Interests</h3>
+                        <p>Tell us what you know and what you enjoy.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <label>
+                            Your skills
+                            <input id="skills" name="skills" type="text"
+                                placeholder="Python, C, HTML" required>
+                            <small>Separate skills with commas.</small>
+                        </label>
+
+                        <label>
+                            Career interests
+                            <input id="interests" name="interests" type="text"
+                                placeholder="AI, web development" required>
+                            <small>
+                                Example: software development, AI, research.
+                            </small>
+                        </label>
+                    </div>
+
+                    <div class="tip-card">
+                        <span>💡</span>
+                        <p>
+                            <strong>Tip:</strong> Include skills you are
+                            learning, too. You don't need to be an expert.
+                        </p>
+                    </div>
+
+                    <div class="slide-actions">
+                        <button class="secondary-button back-button"
+                            type="button" data-back="0">
+                            ← Back
+                        </button>
+
+                        <button class="primary-button next-button"
+                            type="button" data-next="2">
+                            Next: Preferences →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4: OPPORTUNITY PREFERENCES -->
+                <div class="form-slide" data-slide="2" hidden>
+                    <div class="slide-intro">
+                        <span class="slide-number">03</span>
+                        <h3>Opportunity Preferences</h3>
+                        <p>Choose what kind of opportunities you want.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <label>
+                            Preferred location
+                            <input id="location" name="location" type="text"
+                                placeholder="India, Hyderabad, Remote">
+                        </label>
+
+                        <label>
+                            Opportunity type
+                            <select id="opportunityType" name="type">
+                                <option value="all">Jobs & Internships</option>
+                                <option value="jobs">Jobs Only</option>
+                                <option value="internships">
+                                    Internships Only
+                                </option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="tip-card">
+                        <span>🔎</span>
+                        <p>
+                            JobGuide will use your profile to help you
+                            explore matching opportunities.
+                        </p>
+                    </div>
+
+                    <div class="slide-actions">
+                        <button class="secondary-button back-button"
+                            type="button" data-back="1">
+                            ← Back
+                        </button>
+
+                        <button class="primary-button" type="submit">
+                            Find My Opportunities →
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- SKILL INTELLIGENCE -->
+        <section class="panel" id="skillIntelligence">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">CAREER INSIGHTS</p>
+                    <h2>Skill Intelligence</h2>
+                    <p>
+                        Discover skills that may help your career,
+                        with scores and supporting evidence.
+                    </p>
+                </div>
+
+                <span class="section-icon">🧠</span>
+            </div>
+
+            <div id="skillSummary" aria-live="polite">
+                Complete your profile to receive skill recommendations.
+            </div>
+
+            <div id="skillRecommendations" class="job-grid"></div>
+
+            <p class="footnote">
+                Scores are estimates based on available evidence,
+                not guarantees of employment. Source quality and
+                update dates affect recommendation confidence.
+            </p>
+        </section>
+
+        <!-- JOB RESULTS -->
+        <section class="results-section" id="opportunities">
+            <div class="section-heading results-heading">
+                <div>
+                    <p class="eyebrow">YOUR NEXT STEP</p>
+                    <h2>Your Opportunities</h2>
+
+                    <p id="resultsSubtitle">
+                        Complete your profile to discover opportunities.
+                    </p>
+                </div>
+
+                <button id="savedButton" class="secondary-button"
+                    type="button">
+                    ♡ Saved 0
+                </button>
+            </div>
+
+            <div class="filter-bar">
+                <label class="filter-label">
+                    Show
+                    <select id="resultFilter">
+                        <option value="all">All opportunities</option>
+                        <option value="jobs">Jobs only</option>
+                        <option value="internships">Internships only</option>
+                    </select>
+                </label>
+
+                <label class="filter-label search-filter">
+                    Search
+                    <input id="keywordFilter" type="search"
+                        placeholder="Search title or company">
+                </label>
+
+                <button id="refreshButton" class="secondary-button"
+                    type="button">
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <div id="statusMessage" class="status-message"
+                role="status" aria-live="polite">
+                Your matching opportunities will appear here.
+            </div>
+
+            <div id="jobList" class="job-grid"></div>
+
+            <p class="footnote">
+                Job listings are provided by an external service.
+                Always verify details on the employer's website.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <a class="brand footer-brand" href="#">
+            JobGuide
+        </a>
+
+        <p>Helping students take their next career step.</p>
+        <p>Built for students, with students in mind.</p>
+    </footer>
+
+</body>
+</html>
